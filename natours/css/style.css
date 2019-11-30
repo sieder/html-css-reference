@@ -1,0 +1,180 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+/* Block */
+.header {
+    height: 94vh;
+    background-image: linear-gradient(to right bottom,
+            #7ed56fa8,
+            #55c57ad7),
+        url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+    position: relative;
+}
+
+.button:link,
+.button:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+    animation-name: button-intro;
+    animation-duration: 1s;
+}
+
+/* Element */
+.header__box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.header__logo {
+    height: 35px;
+}
+
+.header__primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    margin: 60px;
+    /* backface-visibility: hidden;  */
+    /* determines if the back part of the element is visibile or hidden */
+}
+
+.header__textbox {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Modifier */
+.header__primary--main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation-name: primarymain;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    /* animation-iteration-count: infinite; */
+}
+
+.header__primary--sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    animation-name: primarysub;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+.button--white {
+    background-color: #fff;
+    color: #777;
+    padding: 15px 40px;
+    /* top right bottom left */
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    /* box-shadow: Y X blur color(rgba(0,0,0,opacity) */
+}
+
+.button:hover::after {
+    transform: scale(1.5);
+    opacity: 0;
+    transition: all .4s ease-out;
+}
+
+.button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 5px rgba(0,0,0,.3);
+}
+
+.button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.button--white::after {
+    background-color: #fff;
+}
+
+/* animations */
+@keyframes primarymain {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+
+    80% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes primarysub {
+    0% {
+        opacity: 0;
+        transform: translateX(100px)
+    }
+
+    80% {
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes button-intro {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+    }
+}

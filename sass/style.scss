@@ -1,0 +1,28 @@
+$primaryBtn: rgb(56, 146, 142);
+
+/* block */
+.header {
+    background: blue;
+    display: flex;
+    justify-content: center;
+    button {
+        background: $primaryBtn;
+        &:hover {
+            background: pink;
+        }
+        &::before {
+            content: "Before"   
+        }
+        &::after {
+            content: "After"
+        }
+    }
+}
+
+/*element*/
+
+
+/*modifier*/
+.button--red {
+    background: $primaryBtn;
+}

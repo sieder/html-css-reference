@@ -1,0 +1,33 @@
+/* block */
+.header {
+  background: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header button {
+  background: #38928e;
+}
+
+.header button:hover {
+  background: pink;
+}
+
+.header button::before {
+  content: "Before";
+}
+
+.header button::after {
+  content: "After";
+}
+
+/*element*/
+/*modifier*/
+.button--red {
+  background: #38928e;
+}
+/*# sourceMappingURL=style.css.map */
